@@ -11,6 +11,9 @@ kernelspec:
 
 # Adding signals
 
+```{include} /_snippets/notebook.md
+```
+
 Signals sampled at the same rate add sample by sample, so a sum of sines is one line.
 
 ```{code-cell} ipython3

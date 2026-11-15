@@ -35,22 +35,9 @@ Short notebooks, each showing one thing mypkg does.
 Every module, class and function, from their docstrings.
 
 ```{toctree}
-:caption: Guides
 :hidden:
 
 guides/index
-```
-
-```{toctree}
-:caption: Examples
-:hidden:
-
 examples/index
-```
-
-```{toctree}
-:caption: API
-:hidden:
-
 api/index
 ```

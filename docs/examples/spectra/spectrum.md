@@ -11,6 +11,9 @@ kernelspec:
 
 # A spectrum
 
+```{include} /_snippets/notebook.md
+```
+
 The spectrum of a sum of sines has a peak at each sine's frequency, as tall as its amplitude.
 
 ```{code-cell} ipython3

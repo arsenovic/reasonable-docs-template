@@ -11,6 +11,9 @@ kernelspec:
 
 # Sine waves
 
+```{include} /_snippets/notebook.md
+```
+
 {func}`~mypkg.signals.sine` makes a sine wave of any frequency and amplitude.
 
 ```{code-cell} ipython3

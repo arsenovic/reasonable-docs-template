@@ -28,7 +28,7 @@ extensions = [
     "shibuya_page.gallery",      # the examples' thumbnail gallery
 ]
 
-exclude_patterns = ["_build", "**.ipynb_checkpoints", "jupyter_execute"]
+exclude_patterns = ["_build", "**.ipynb_checkpoints", "jupyter_execute", "_snippets"]
 # A reference that doesn't resolve is an error, so a renamed function can't leave a dead link.
 nitpicky = True
 templates_path = ["_templates"]

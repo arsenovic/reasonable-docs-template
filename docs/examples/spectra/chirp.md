@@ -11,6 +11,9 @@ kernelspec:
 
 # A chirp
 
+```{include} /_snippets/notebook.md
+```
+
 A chirp sweeps through a range of frequencies, so its spectrum is spread across that range.
 
 This page has two plots. The gallery shows the one in the cell tagged `thumbnail`, rather than the

@@ -40,6 +40,7 @@ docs/
   api/index.md      the API reference; autosummary writes api/generated/
   _templates/       autosummary's page templates for modules and classes
   _static/          the logo, and mypkg.css for your own styles
+  _snippets/        text included in pages, such as the tip at the top of each notebook
 src/mypkg/          the package being documented
 .jupyter/           makes `just notebooks` open .md files as notebooks
 ```
@@ -62,6 +63,9 @@ kernelspec:
 
 # A title
 
+```{include} /_snippets/notebook.md
+```
+
 Some text.
 
 ```{code-cell} ipython3
@@ -70,7 +74,11 @@ mypkg.sine(5).plot();
 ```
 ````
 
-Edit it as text, or in JupyterLab with `just notebooks`. A cell that raises fails the build, unless
+The `include` puts a tip under the title that links to *Running the examples* (on
+`examples/index.md`), which explains how readers can run the notebooks. Edit it once, in
+`docs/_snippets/notebook.md`, for every page.
+
+Edit a notebook as text, or in JupyterLab with `just notebooks`. A cell that raises fails the build, unless
 it's tagged `raises-exception`.
 
 The build caches each notebook's outputs, and re-runs a notebook only when its code changes, not when
