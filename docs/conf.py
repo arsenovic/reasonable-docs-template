@@ -14,7 +14,7 @@ release = mypkg.__version__
 html_title = project
 
 # The repository, for the header's GitHub icon and link.
-repository = "https://github.com/you/mypkg"
+repository = "https://github.com/arsenovic/reasonable-docs-template"
 
 # -- Extensions ---------------------------------------------------------------
 
@@ -100,6 +100,7 @@ html_theme_options = {
         {"title": "Guides", "url": "guides/getting-started"},
         {"title": "Examples", "url": "examples/index"},
         {"title": "API", "url": "api/index"},
+        {"title": "GitHub", "url": repository, "external": True},
     ],
     # The sidebar shows three levels, so a section's pages under its headings (Examples > Basics >
     # Sine waves); prune_page_headings leaves out headings that hold no pages.

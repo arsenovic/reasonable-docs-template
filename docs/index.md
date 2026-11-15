@@ -56,3 +56,12 @@ examples/running
 
 api/generated/mypkg.signals
 ```
+
+```{toctree}
+:caption: Project
+:hidden:
+
+project/contributing
+project/about
+project/license
+```

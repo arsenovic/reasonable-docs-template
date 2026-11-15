@@ -17,7 +17,8 @@ built with [Sphinx](https://www.sphinx-doc.org/) and the
    and `docs/api/index.md`.
 3. In `docs/conf.py`, set `project`, `author` and `repository`. Replace `docs/_static/logo.svg`.
    Choose a look with `just looks`, and set it as `look` in `docs/conf.py`.
-4. Replace the pages in `docs/guides` and `docs/examples` with your own.
+4. Replace the pages in `docs/guides` and `docs/examples` with your own, and edit `docs/project`
+   and `LICENSE`.
 
 ## Recipes
 
@@ -36,10 +37,11 @@ Needs [uv](https://docs.astral.sh/uv/) and [just](https://just.systems/).
 ```
 docs/
   conf.py           Sphinx settings, commented
-  index.md          the home page; its hidden toctrees make the sidebar's Guides, Examples and API
+  index.md          the home page; its hidden toctrees make the sidebar's Guides, Examples, API and Project
                     captions, listing the pages themselves
   guides/           read in order; add each to the Guides toctree in index.md
   examples/         index.md is the gallery, a section per folder; running.md explains running them
+  project/          contributing, about and licensing pages
   api/index.md      the API tab's table of modules; autosummary writes api/generated/, and each
                     module goes in the API toctree in index.md
   _templates/       autosummary's page templates for modules and classes
