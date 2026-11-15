@@ -2,7 +2,8 @@
    :root { --sp-nav-bg: #1f4e8c; }  html.dark { --sp-nav-bg: #12304f; }
    The theme's README lists them all. */
 
-/* Gallery pages without an image show a faded logo. */
+/* Gallery pages without an image show a faded logo; the home page's plot is wider than a logo. */
 :root {
   --sp-gallery-placeholder: url("logo.svg");
+  --sp-side-figure-width: 320px;
 }

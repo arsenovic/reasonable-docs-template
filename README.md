@@ -45,7 +45,7 @@ docs/
   api/index.md      the API tab's table of modules; autosummary writes api/generated/, and each
                     module goes in the API toctree in index.md
   _templates/       autosummary's page templates for modules and classes
-  _static/          the logo, and mypkg.css for your own styles
+  _static/          the logo, the home page's plot (spectrum.svg), and mypkg.css for your own styles
 src/mypkg/          the package being documented
 .jupyter/           makes `just notebooks` open .md files as notebooks
 ```

@@ -1,13 +1,49 @@
 # mypkg *— sampled signals, and their spectra*
 
-mypkg makes signals, adds them up, and plots them and their spectra. It's a stand-in: replace it with
-your own package, and these pages with your own.
+```{important}
+**This is a template project.** mypkg is a stand-in package, and these docs show what
+[reasonable-docs-template](https://github.com/arsenovic/reasonable-docs-template) sets up: guides, a
+gallery of examples, an API reference and project pages. To start your own, copy the template and
+follow its [README](https://github.com/arsenovic/reasonable-docs-template#readme).
+```
+
+**mypkg** is an open-source, BSD-licensed Python package for sampled signals. It makes sine waves
+and chirps, adds them together, and plots them and their spectra as interactive figures.
+
+## Getting started
+
+::::{container} sp-side-by-side
+
+:::{container}
+Plot the spectrum of two sine waves, in **3 lines**.
 
 ```python
-import mypkg
-
-signal = mypkg.sine(5) + mypkg.sine(12, amplitude=0.5)
+from mypkg import sine
+signal = sine(5) + sine(12, amplitude=0.5)
 signal.plot_spectrum()
+```
+
+Install it with pip, then read {doc}`guides/getting-started`.
+
+```sh
+python -m pip install "mypkg[plot]"
+```
+:::
+
+```{image} _static/spectrum.svg
+:alt: The spectrum of two sine waves, with peaks at 5 Hz and 12 Hz
+```
+
+::::
+
+## [Some examples](examples/index.md)
+
+```{gallery}
+:links-only:
+
+examples/basics/sine-waves
+examples/basics/adding-signals
+examples/spectra/chirp
 ```
 
 ## Features
@@ -19,20 +55,15 @@ signal.plot_spectrum()
 - Analysis
   - magnitude spectra
 - Plotting
+  - interactive plots, with plotly
   - signals against time
   - spectra against frequency
 
-## Guides
+## Questions or comments?
 
-Start with {doc}`guides/getting-started`, then read {doc}`guides/concepts`.
-
-## [Examples](examples/index.md)
-
-Short notebooks, each showing one thing mypkg does, in a gallery.
-
-## [API](api/index.md)
-
-Every module, class and function, from their docstrings.
+Ask, report a bug, or suggest a feature on
+[GitHub](https://github.com/arsenovic/reasonable-docs-template/issues). To help, see
+{doc}`project/contributing`.
 
 ```{toctree}
 :caption: Guides
