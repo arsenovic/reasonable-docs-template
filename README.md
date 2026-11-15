@@ -24,8 +24,8 @@ Needs [uv](https://docs.astral.sh/uv/) and [just](https://just.systems/).
 
 | Recipe           | Does |
 | ---------------- | ---- |
-| `just docs`      | Builds the docs into `docs/_build/html`, failing on any warning. |
-| `just serve`     | Serves the docs at http://127.0.0.1:8000, rebuilding and reloading on every change. |
+| `just docs`      | Builds the docs into `docs/_build/html`, failing on any warning. `just docs scipy` builds them in another look. |
+| `just serve`     | Serves the docs at http://127.0.0.1:8000, rebuilding and reloading on every change. `just serve scipy` serves them in another look. |
 | `just notebooks` | Opens the guides and examples as notebooks in JupyterLab. Saving writes the `.md` files. |
 | `just clean`     | Deletes the built docs, the generated API pages, and the notebooks' cached outputs. |
 
