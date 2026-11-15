@@ -11,9 +11,6 @@ kernelspec:
 
 # Getting started
 
-```{include} /_snippets/notebook.md
-```
-
 ## Install
 
 ```sh

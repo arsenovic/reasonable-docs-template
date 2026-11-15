@@ -44,7 +44,6 @@ docs/
                     module goes in the API toctree in index.md
   _templates/       autosummary's page templates for modules and classes
   _static/          the logo, and mypkg.css for your own styles
-  _snippets/        text included in pages, such as the tip at the top of each notebook
 src/mypkg/          the package being documented
 .jupyter/           makes `just notebooks` open .md files as notebooks
 ```
@@ -67,9 +66,6 @@ kernelspec:
 
 # A title
 
-```{include} /_snippets/notebook.md
-```
-
 Some text.
 
 ```{code-cell} ipython3
@@ -78,9 +74,9 @@ mypkg.sine(5).plot();
 ```
 ````
 
-The `include` puts a tip under the title that links to *Running the examples* (on
-`examples/running.md`), which explains how readers can run the notebooks. Edit it once, in
-`docs/_snippets/notebook.md`, for every page.
+Each notebook page gets **Run** and **Download** links at the top right: Run opens
+`examples/running.md`, which explains how readers can run the notebooks (the `run_notebooks` option
+in `docs/conf.py`), and Download saves the page's `.md` file.
 
 Edit a notebook as text, or in JupyterLab with `just notebooks`. A cell that raises fails the build, unless
 it's tagged `raises-exception`.

@@ -28,7 +28,7 @@ extensions = [
     "shibuya_page.gallery",      # the examples' thumbnail gallery
 ]
 
-exclude_patterns = ["_build", "**.ipynb_checkpoints", "jupyter_execute", "_snippets"]
+exclude_patterns = ["_build", "**.ipynb_checkpoints", "jupyter_execute"]
 # A reference that doesn't resolve is an error, so a renamed function can't leave a dead link.
 nitpicky = True
 templates_path = ["_templates"]
@@ -77,11 +77,13 @@ html_css_files = ["mypkg.css"]
 html_favicon = "_static/logo.svg"
 
 html_theme_options = {
-    # shibuya-page's own options (see its README); these are the defaults.
+    # shibuya-page's own options (see its README).
     "look": "rtd",
     "prune_page_headings": True,
     "external_links_new_tab": True,
     "download_notebooks": True,
+    # Notebook pages link to this page, as Run, beside Download.
+    "run_notebooks": "examples/running",
     # Shibuya's options: https://shibuya.lepture.com/customisation/
     "accent_color": "blue",
     "light_logo": "_static/logo.svg",

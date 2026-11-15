@@ -11,9 +11,6 @@ kernelspec:
 
 # Concepts
 
-```{include} /_snippets/notebook.md
-```
-
 ## Samples and rate
 
 A {class}`~mypkg.signals.Signal` is two things: its samples, and the rate they were taken at. Everything
