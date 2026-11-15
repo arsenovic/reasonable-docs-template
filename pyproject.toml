@@ -1,0 +1,34 @@
+[project]
+name = "mypkg"
+version = "0.1.0"
+description = "A tiny package, to show the reasonable-docs-template's docs"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2",
+]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.9"]
+
+[dependency-groups]
+docs = [
+    "shibuya-page",
+    "sphinx>=9.1",
+    "myst-nb>=1.3",
+    "sphinx-autobuild>=2025.8",
+    "sphinx-codeautolink>=0.17",
+    "sphinx-copybutton>=0.5",
+    "matplotlib>=3.9",
+    "ipykernel>=6.29",
+    "jupyterlab>=4.4",
+    "jupytext>=1.17",
+]
+
+[tool.uv.sources]
+# until shibuya-page is on PyPI; then drop this
+shibuya-page = { path = "../shibuya-page", editable = true }
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"

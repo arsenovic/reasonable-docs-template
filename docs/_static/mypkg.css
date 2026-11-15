@@ -1,0 +1,8 @@
+/* mypkg's own styles, loaded after the theme's. Change the palette by overriding its variables, e.g.
+   :root { --sp-nav-bg: #1f4e8c; }  html.dark { --sp-nav-bg: #12304f; }
+   The theme's README lists them all. */
+
+/* Gallery pages without an image show a faded logo. */
+:root {
+  --sp-gallery-placeholder: url("logo.svg");
+}
