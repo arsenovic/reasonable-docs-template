@@ -14,6 +14,6 @@ serve:
 notebooks:
     JUPYTER_CONFIG_PATH="{{justfile_directory()}}/.jupyter" uv run --group docs jupyter lab --notebook-dir=docs
 
-# Delete the built docs, the generated API pages and the notebooks' cached outputs.
+# Delete the built docs, the generated API pages and the notebooks' cached outputs, so they re-run.
 clean:
     rm -rf docs/_build docs/api/generated

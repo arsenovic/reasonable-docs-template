@@ -26,6 +26,9 @@ class Signal:
     samples: np.ndarray
     rate: float
 
+    def __repr__(self) -> str:
+        return f"Signal({len(self.samples)} samples at {self.rate:g} Hz)"
+
     @property
     def duration(self) -> float:
         """Length of the signal, in seconds."""

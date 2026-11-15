@@ -73,6 +73,9 @@ mypkg.sine(5).plot();
 Edit it as text, or in JupyterLab with `just notebooks`. A cell that raises fails the build, unless
 it's tagged `raises-exception`.
 
+The build caches each notebook's outputs, and re-runs a notebook only when its code changes, not when
+your package does. After changing the package, `just clean` makes the next build re-run them all.
+
 A new example goes in a section folder under `docs/examples/`, and appears in that section's gallery.
 Its card shows the notebook's last plot. To choose another, tag a cell `thumbnail`, or set
 `thumbnail: path/to/image.png` in the front matter.
