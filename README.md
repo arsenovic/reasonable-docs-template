@@ -34,10 +34,12 @@ Needs [uv](https://docs.astral.sh/uv/) and [just](https://just.systems/).
 ```
 docs/
   conf.py           Sphinx settings, commented
-  index.md          the home page; its hidden toctrees make the Guides, Examples and API tabs
-  guides/           read in order, listed on guides/index.md
-  examples/         a gallery per section, on examples/index.md: one folder per section
-  api/index.md      the API reference; autosummary writes api/generated/
+  index.md          the home page; its hidden toctrees make the sidebar's Guides, Examples and API
+                    captions, listing the pages themselves
+  guides/           read in order; add each to the Guides toctree in index.md
+  examples/         index.md is the gallery, a section per folder; running.md explains running them
+  api/index.md      the API tab's table of modules; autosummary writes api/generated/, and each
+                    module goes in the API toctree in index.md
   _templates/       autosummary's page templates for modules and classes
   _static/          the logo, and mypkg.css for your own styles
   _snippets/        text included in pages, such as the tip at the top of each notebook
@@ -75,7 +77,7 @@ mypkg.sine(5).plot();
 ````
 
 The `include` puts a tip under the title that links to *Running the examples* (on
-`examples/index.md`), which explains how readers can run the notebooks. Edit it once, in
+`examples/running.md`), which explains how readers can run the notebooks. Edit it once, in
 `docs/_snippets/notebook.md`, for every page.
 
 Edit a notebook as text, or in JupyterLab with `just notebooks`. A cell that raises fails the build, unless

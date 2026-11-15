@@ -22,22 +22,37 @@ signal.plot_spectrum()
   - signals against time
   - spectra against frequency
 
-## [Guides](guides/index.md)
+## Guides
 
 Start with {doc}`guides/getting-started`, then read {doc}`guides/concepts`.
 
 ## [Examples](examples/index.md)
 
-Short notebooks, each showing one thing mypkg does.
+Short notebooks, each showing one thing mypkg does, in a gallery.
 
 ## [API](api/index.md)
 
 Every module, class and function, from their docstrings.
 
 ```{toctree}
+:caption: Guides
 :hidden:
 
-guides/index
+guides/getting-started
+guides/concepts
+```
+
+```{toctree}
+:caption: Examples
+:hidden:
+
 examples/index
-api/index
+examples/running
+```
+
+```{toctree}
+:caption: API
+:hidden:
+
+api/generated/mypkg.signals
 ```

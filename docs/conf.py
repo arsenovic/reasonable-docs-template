@@ -88,7 +88,7 @@ html_theme_options = {
     "dark_logo": "_static/logo.svg",
     "github_url": repository,
     "nav_links": [
-        {"title": "Guides", "url": "guides/index"},
+        {"title": "Guides", "url": "guides/getting-started"},
         {"title": "Examples", "url": "examples/index"},
         {"title": "API", "url": "api/index"},
     ],

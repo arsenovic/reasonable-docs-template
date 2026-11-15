@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # API
 
 Every public module, class and function in mypkg. The package re-exports the most used ones, so
