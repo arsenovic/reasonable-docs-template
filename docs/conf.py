@@ -78,7 +78,7 @@ html_favicon = "_static/logo.svg"
 
 html_theme_options = {
     # shibuya-page's own options (see its README); these are the defaults.
-    "palette": "rtd",
+    "look": "rtd",
     "prune_page_headings": True,
     "external_links_new_tab": True,
     "download_notebooks": True,

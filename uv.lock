@@ -2268,6 +2268,9 @@ requires-dist = [
     { name = "sphinx", specifier = ">=9.1" },
 ]
 
+[package.metadata.requires-dev]
+dev = [{ name = "pytest", specifier = ">=9.2.0" }]
+
 [[package]]
 name = "six"
 version = "1.17.0"
