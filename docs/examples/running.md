@@ -25,7 +25,7 @@ The **Download** link at the top of each notebook page saves its `.md` file. To 
 repository:
 
 ```sh
-pip install mypkg matplotlib jupyterlab jupytext
+pip install mypkg plotly jupyterlab jupytext
 jupyter lab
 ```
 

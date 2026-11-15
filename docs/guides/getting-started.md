@@ -14,7 +14,7 @@ kernelspec:
 ## Install
 
 ```sh
-pip install mypkg
+pip install "mypkg[plot]"
 ```
 
 ## Make a signal
@@ -30,8 +30,11 @@ signal
 
 ## Plot it
 
+{meth}`~mypkg.signals.Signal.plot` draws it with [plotly](https://plotly.com/python/), so you can
+zoom in and hover over it to read its values:
+
 ```{code-cell} ipython3
-signal.plot();
+signal.plot()
 ```
 
 Next, {doc}`concepts` explains what a {class}`~mypkg.signals.Signal` holds.

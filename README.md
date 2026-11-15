@@ -70,7 +70,7 @@ Some text.
 
 ```{code-cell} ipython3
 import mypkg
-mypkg.sine(5).plot();
+mypkg.sine(5).plot()
 ```
 ````
 
@@ -87,6 +87,14 @@ your package does. After changing the package, `just clean` makes the next build
 A new example goes in a section folder under `docs/examples/`, and appears in that section's gallery.
 Its card shows the notebook's last plot. To choose another, tag a cell `thumbnail`, or set
 `thumbnail: path/to/image.png` in the front matter.
+
+## Plots
+
+mypkg plots with [plotly](https://plotly.com/python/), so plots in the docs are interactive: they
+zoom, pan, and show values on hover. `docs/conf.py` sets the notebooks' kernel to draw each plotly
+figure twice, as HTML for the page and as a PNG for the gallery's card, and loads plotly.js on the
+pages that have a plot. The PNGs come from [kaleido](https://github.com/plotly/Kaleido), which
+needs Chrome; `uv run --group docs plotly_get_chrome` installs one if you don't have it.
 
 ## Publish
 

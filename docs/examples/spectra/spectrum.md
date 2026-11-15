@@ -14,12 +14,9 @@ kernelspec:
 The spectrum of a sum of sines has a peak at each sine's frequency, as tall as its amplitude.
 
 ```{code-cell} ipython3
-import matplotlib.pyplot as plt
 import mypkg
 
 signal = mypkg.sine(50) + mypkg.sine(120, amplitude=0.5)
 
-fig, ax = plt.subplots(figsize=(6, 3))
-signal.plot_spectrum(ax)
-ax.set_xlim(0, 200);
+signal.plot_spectrum().update_xaxes(range=[0, 200])
 ```

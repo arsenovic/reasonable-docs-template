@@ -1,6 +1,9 @@
 # Sphinx configuration: https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import os
+
 import mypkg
+from plotly.offline import get_plotlyjs_version
 
 # -- Project ------------------------------------------------------------------
 
@@ -22,7 +25,7 @@ extensions = [
     "sphinx.ext.napoleon",       # NumPy-style docstrings
     "sphinx.ext.mathjax",        # $math$
     "sphinx.ext.viewcode",       # [source] links to highlighted code
-    "sphinx.ext.intersphinx",    # links to Python's, NumPy's and matplotlib's docs
+    "sphinx.ext.intersphinx",    # links to Python's, NumPy's and plotly's docs
     "sphinx_codeautolink",       # names in code blocks and cells link to their API pages
     "sphinx_copybutton",         # a copy button on code blocks
     "shibuya_page.gallery",      # the examples' thumbnail gallery
@@ -45,6 +48,10 @@ nb_execution_timeout = 120
 nb_execution_raise_on_error = True
 nb_merge_streams = True
 
+# Plotly figures show as interactive HTML, which needs plotly.js on the page (setup, below), and
+# carry a PNG too, which the gallery uses for their cards. The notebooks' kernel reads this setting.
+os.environ["PLOTLY_RENDERER"] = "sphinx_gallery+png"
+
 # -- API reference ------------------------------------------------------------
 
 autosummary_generate = True
@@ -58,7 +65,7 @@ napoleon_preprocess_types = True
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
     "numpy": ("https://numpy.org/doc/stable", None),
-    "matplotlib": ("https://matplotlib.org/stable", None),
+    "plotly": ("https://plotly.com/python-api-reference", None),
 }
 
 # Link names in code cells; a cell that isn't valid Python just goes unlinked.
@@ -101,3 +108,16 @@ html_theme_options = {
     "toctree_titles_only": False,
     "show_ai_links": False,
 }
+
+
+# -- Plotly ---------------------------------------------------------------------
+
+
+def add_plotlyjs(app, pagename, templatename, context, doctree):
+    """Load plotly.js on the pages with a plotly figure."""
+    if "plotly-graph-div" in context.get("body", ""):
+        app.add_js_file(f"https://cdn.plot.ly/plotly-{get_plotlyjs_version()}.min.js")
+
+
+def setup(app):
+    app.connect("html-page-context", add_plotlyjs)

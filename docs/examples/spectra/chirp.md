@@ -20,17 +20,13 @@ last.
 ---
 tags: [thumbnail]
 ---
-import matplotlib.pyplot as plt
 import mypkg
 
 signal = mypkg.chirp(start=1, stop=20, duration=2.0)
 
-fig, ax = plt.subplots(figsize=(6, 3))
-signal.plot(ax);
+signal.plot()
 ```
 
 ```{code-cell} ipython3
-fig, ax = plt.subplots(figsize=(6, 3))
-signal.plot_spectrum(ax)
-ax.set_xlim(0, 40);
+signal.plot_spectrum().update_xaxes(range=[0, 40])
 ```

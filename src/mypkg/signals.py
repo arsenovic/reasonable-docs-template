@@ -58,47 +58,53 @@ class Signal:
         magnitude = np.abs(np.fft.rfft(self.samples)) * 2 / len(self.samples)
         return np.fft.rfftfreq(len(self.samples), 1 / self.rate), magnitude
 
-    def plot(self, ax=None, **kwargs):
-        """Plot the signal against time.
+    def plot(self, fig=None, **kwargs):
+        """Plot the signal against time, as an interactive plotly figure.
 
         Parameters
         ----------
-        ax : matplotlib.axes.Axes, optional
-            Where to plot; by default, the current axes.
+        fig : plotly.graph_objects.Figure, optional
+            A figure to add the signal to; by default, a new one.
         **kwargs
-            Passed to :meth:`matplotlib.axes.Axes.plot`.
+            Passed to :class:`plotly.graph_objects.Scatter`, such as ``name``.
 
         Returns
         -------
-        matplotlib.axes.Axes
+        plotly.graph_objects.Figure
         """
-        import matplotlib.pyplot as plt
+        fig = _figure(fig)
+        fig.add_scatter(x=self.time, y=self.samples, mode="lines", **kwargs)
+        fig.update_xaxes(title="time (s)")
+        return fig
 
-        ax = ax or plt.gca()
-        ax.plot(self.time, self.samples, **kwargs)
-        ax.set_xlabel("time (s)")
-        return ax
-
-    def plot_spectrum(self, ax=None, **kwargs):
+    def plot_spectrum(self, fig=None, **kwargs):
         """Plot the signal's magnitude spectrum, from :meth:`spectrum`.
 
         Parameters
         ----------
-        ax : matplotlib.axes.Axes, optional
-            Where to plot; by default, the current axes.
+        fig : plotly.graph_objects.Figure, optional
+            A figure to add the spectrum to; by default, a new one.
         **kwargs
-            Passed to :meth:`matplotlib.axes.Axes.plot`.
+            Passed to :class:`plotly.graph_objects.Scatter`, such as ``name``.
 
         Returns
         -------
-        matplotlib.axes.Axes
+        plotly.graph_objects.Figure
         """
-        import matplotlib.pyplot as plt
+        fig = _figure(fig)
+        freqs, magnitude = self.spectrum()
+        fig.add_scatter(x=freqs, y=magnitude, mode="lines", **kwargs)
+        fig.update_xaxes(title="frequency (Hz)")
+        return fig
 
-        ax = ax or plt.gca()
-        ax.plot(*self.spectrum(), **kwargs)
-        ax.set_xlabel("frequency (Hz)")
-        return ax
+
+def _figure(fig=None):
+    """The figure to plot on: `fig`, or a new one sized for a page."""
+    if fig is not None:
+        return fig
+    import plotly.graph_objects as go
+
+    return go.Figure(layout={"height": 350, "margin": {"l": 50, "r": 20, "t": 20, "b": 50}})
 
 
 def sine(freq: float, duration: float = 1.0, rate: float = 1000.0, amplitude: float = 1.0) -> Signal:

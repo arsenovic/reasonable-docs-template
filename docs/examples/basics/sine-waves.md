@@ -11,14 +11,14 @@ kernelspec:
 
 # Sine waves
 
-{func}`~mypkg.signals.sine` makes a sine wave of any frequency and amplitude.
+{func}`~mypkg.signals.sine` makes a sine wave of any frequency and amplitude. Each plot is
+interactive: hover over a line to read its values, drag to zoom in, and double-click to zoom back out.
 
 ```{code-cell} ipython3
-import matplotlib.pyplot as plt
 import mypkg
 
-fig, ax = plt.subplots(figsize=(6, 3))
-for freq in (1, 2, 4):
-    mypkg.sine(freq).plot(ax, label=f"{freq} Hz")
-ax.legend();
+fig = mypkg.sine(1).plot(name="1 Hz")
+for freq in (2, 4):
+    mypkg.sine(freq).plot(fig, name=f"{freq} Hz")
+fig
 ```
