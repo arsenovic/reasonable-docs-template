@@ -38,6 +38,7 @@ Every module, class and function, from their docstrings.
 :caption: Guides
 :hidden:
 
+Overview <self>
 guides/getting-started
 guides/concepts
 ```
