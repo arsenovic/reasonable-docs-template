@@ -10,6 +10,10 @@ docs:
 serve:
     uv run --group docs sphinx-autobuild docs docs/_build/html --watch src --ignore "*/jupyter_execute/*"
 
+# Serve the docs in every shibuya-page look at http://127.0.0.1:8000, with a menu to switch, to choose one for conf.py.
+looks:
+    uv run --group docs python -m shibuya_page.looks docs docs/_build/looks --serve
+
 # Open the guides and examples as notebooks in JupyterLab. Saving writes the .md files.
 notebooks:
     JUPYTER_CONFIG_PATH="{{justfile_directory()}}/.jupyter" uv run --group docs jupyter lab --notebook-dir=docs

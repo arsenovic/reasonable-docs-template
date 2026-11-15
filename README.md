@@ -16,6 +16,7 @@ built with [Sphinx](https://www.sphinx-doc.org/) and the
 2. Replace `src/mypkg` with your package, and rename `mypkg` in `pyproject.toml`, `docs/conf.py`
    and `docs/api/index.md`.
 3. In `docs/conf.py`, set `project`, `author` and `repository`. Replace `docs/_static/logo.svg`.
+   Choose a look with `just looks`, and set it as `look` in `docs/conf.py`.
 4. Replace the pages in `docs/guides` and `docs/examples` with your own.
 
 ## Recipes
@@ -26,6 +27,7 @@ Needs [uv](https://docs.astral.sh/uv/) and [just](https://just.systems/).
 | ---------------- | ---- |
 | `just docs`      | Builds the docs into `docs/_build/html`, failing on any warning. |
 | `just serve`     | Serves the docs at http://127.0.0.1:8000, rebuilding and reloading on every change. |
+| `just looks`     | Serves the docs in every look, with a menu in the corner to switch, so you can choose one for `conf.py`. |
 | `just notebooks` | Opens the guides and examples as notebooks in JupyterLab. Saving writes the `.md` files. |
 | `just clean`     | Deletes the built docs, the generated API pages, and the notebooks' cached outputs. |
 
